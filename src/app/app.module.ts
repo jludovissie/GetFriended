@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { AnotherUserComponent } from './another-user/another-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavBarComponent,
-    SuggestedFriendsComponent
+    SuggestedFriendsComponent,
+    MyProfileComponent,
+    AnotherUserComponent
   ],
   imports: [
     BrowserModule,
