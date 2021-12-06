@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SuggestedfriendsService } from '../suggestedfriends.service';
+import { UserService } from '../user.service';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-suggested-friends',
@@ -7,12 +8,12 @@ import { SuggestedfriendsService } from '../suggestedfriends.service';
   styleUrls: ['./suggested-friends.component.css']
 })
 export class SuggestedFriendsComponent implements OnInit {
-suggestedfriends: {ID: string, name: string, description: string}[] = [];
+suggestedfriends: User[] = [];
 
-  constructor(private suggestedfriendsservice: SuggestedfriendsService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(){
-    this.suggestedfriends = this.suggestedfriendsservice.suggestedfriends
+    this.suggestedfriends = this.userService.suggestedfriends
   }
 
 

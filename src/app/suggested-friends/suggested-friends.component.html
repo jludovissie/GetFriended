@@ -49,33 +49,35 @@
   </div>
 </div> -->
 
-
 <div class="row">
   <div class="col-xs-12">
-      <div class="center">
-          <h3>Suggested Friends</h3>
-      </div>
+    <div class="center">
+      <h3>Suggested Friends</h3>
+    </div>
   </div>
 </div>
-<hr>
+<hr />
 <div class="row">
   <div class="col-xs-12">
-      <a href="#"
-         class="list-group-item clearfix"
-         *ngFor="let suggestedfriend of suggestedfriends">
-          <div class="pull-left">
-              <h4 class="list-group-item-heading">{{ suggestedfriend.name }}</h4>
-              <p class="list-group-item-text">{{ suggestedfriend.description }}</p>
-              <button class="btn btn-success">Add friend</button>
-              <hr>
-          </div>
-          <span class="pull-right">
-              <img
-                   [src] = "suggestedfriend.image"
-                   alt="{{ suggestedfriend.name }}"
-                   class="img-responsive"
-                   style="max-height: 300px;">
-          </span>
-      </a>
+    <a
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let suggestedfriend of suggestedfriends"
+    >
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ suggestedfriend.name }}</h4>
+        <p class="list-group-item-text">{{ suggestedfriend.description }}</p>
+        <button class="btn btn-success">Add friend</button>
+        <hr />
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="suggestedfriend.image"
+          alt="{{ suggestedfriend.name }}"
+          class="img-responsive"
+          style="max-height: 300px"
+        />
+      </span>
+    </a>
   </div>
 </div>
