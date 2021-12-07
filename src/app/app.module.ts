@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,11 +13,13 @@ import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends
     AppComponent,
     HomeComponent,
     NavBarComponent,
-    SuggestedFriendsComponent
+    SuggestedFriendsComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
