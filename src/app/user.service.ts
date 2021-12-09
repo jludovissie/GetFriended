@@ -5,7 +5,7 @@ import { User } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
-  suggestedfriends: User[] = [
+  user: User[] = [
     new User(
       '',
       '',
