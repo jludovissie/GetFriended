@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends.component';
 import { UserService } from './user.service';
-import { GetfriendedComponent } from './getfriended/getfriended.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { GetfriendedComponent } from './getfriended/getfriended.component';
     HomeComponent,
     NavBarComponent,
     SuggestedFriendsComponent,
-    GetfriendedComponent
   ],
   imports: [
     BrowserModule,
