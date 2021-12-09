@@ -15,7 +15,6 @@ import { UserService } from './user.service';
     HomeComponent,
     NavBarComponent,
     SuggestedFriendsComponent,
-
   ],
   imports: [
     BrowserModule,
