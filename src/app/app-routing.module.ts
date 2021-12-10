@@ -14,13 +14,10 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'suggestedFriends', component: SuggestedFriendsComponent, canActivate: [AuthGuard]},
-  { path: 'signup', component: SignupComponent}
+  { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
-
+  { path: 'user/:id', component: UserComponent },
   {path: 'main', component: MainComponent}
-
-  { path: 'user', component: UserComponent },
-
 
 ];
 

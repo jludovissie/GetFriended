@@ -47,4 +47,8 @@ this.post[i] = {...this.post[i], dislikes: this.post[i].dislikes + 1};
 this.postSub.next(this.post);
 console.log(this.post)
 }
+
+getPostsByUser(username) {
+  return this.post.filter(p => p.username === username)
+}
 }

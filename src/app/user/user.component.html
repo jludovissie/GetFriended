@@ -1,11 +1,11 @@
 <div class = "container">
   <div class = "row">
   <div class= "col-sm">
-    <img src="https://tse4.mm.bing.net/th?id=OIP.2ZXXKN7zakCiYeNrq5-b_gHaHa&pid=Api&P=0&w=300&h=300" class="img-fluid">
+    <img src={{user.image}} class="img-fluid">
   </div>
     <div class="col-sm my-auto">
-    <h1>Mighty Pete</h1>
-    <p>I am mighty! </p>
+    <h1>{{user.name}}</h1>
+    <p>{{user.description}}</p>
     </div>
   </div>
 </div>
@@ -15,35 +15,14 @@
 
 <div class="container">
   <div class="row">
-  <div class="card">
+  <div class="card" *ngFor="let post of posts">
   <div class="card-body">
-   <h2>MightPete43</h2>
-   This is some text within a card body.
+   <h2>{{post.username}}</h2>
+   {{post.post}}
    </div>
  </div>
 
- <div class="card">
- <div class="card-body">
-  <h2>MightPete43</h2>
-  This is some text within a card body.
+
   </div>
 </div>
 
-  </div>
-  <div class="row">
-  <div class="card">
-  <div class="card-body">
-   <h2>MightPete43</h2>
-   This is some text within a card body.
-   </div>
- </div>
-
- <div class="card">
- <div class="card-body">
-  <h2>MightPete43</h2>
-</div>
-
-  </div>
-  <div class = "row">
-  </div>
-</div>
