@@ -16,5 +16,5 @@ export class User {
       this.description = description;
       this.image = image
      }
-}
 
+}
