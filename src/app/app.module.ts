@@ -11,6 +11,11 @@ import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 
+import { MainComponent } from './main/main.component';
+
+import { UserComponent } from './user/user.component';
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { UserService } from './user.service';
     NavBarComponent,
     SuggestedFriendsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+
+    MainComponent
+
+
+    UserComponent,
 
   ],
   imports: [
