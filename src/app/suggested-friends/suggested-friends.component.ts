@@ -18,6 +18,8 @@ users: User[] = [];
   }
 
   gotoprofile(id) {
-    this.router.navigate(['/user']);
+    console.log(id)
+    this.router.navigate(['/user/' + id]);
+
   }
 }
