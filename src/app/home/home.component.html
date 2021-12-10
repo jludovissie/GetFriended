@@ -31,6 +31,9 @@
    <div class="card-body">
   <h2>{{ post.username }}</h2>
     <p> {{ post.post }} </p>
+    <button type="button" class="btn btn-primary" (click)="onLiked(i)"> Like | {{ post.likes }}
+    </button>
+      <button type ="button" class = "btn btn-danger" (click)="onDisliked(i)"> Dislike | {{ post.dislikes}} </button>
     </div>
   </div>
 </div>

@@ -27,13 +27,23 @@ export class HomeComponent implements OnInit {
     this.isShown = ! this.isShown;
  }
  onSubmit(newPost){
-   this.post.addPosts(newPost.value)
- }
+   this.post.addPosts(newPost.value);
 
+ }
+ onLiked(i: Number){
+  this.post.likePost(i);
+
+ }
+  
  goToUser() {
    this.route.params.subscribe(params => {
      this.user_Id = params["id"]
    })
 
  }
+ onDisliked(i : number){
+  this.post.dislikePost(i);
+
+ }
+
 }
