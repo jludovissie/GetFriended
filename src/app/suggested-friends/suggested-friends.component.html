@@ -12,18 +12,19 @@
       <a
         href="#"
         class="list-group-item clearfix"
-        *ngFor="let suggestedfriend of suggestedfriends"
+        *ngFor="let user of users"
       >
         <div class="pull-left">
-          <h4 class="list-group-item-heading">{{ suggestedfriend.name }}</h4>
-          <p class="list-group-item-text">{{ suggestedfriend.description }}</p>
-          <button class="btn btn-success">Add friend</button>
+          <h4 class="list-group-item-heading">{{ user.name }}</h4>
+          <p class="list-group-item-text">{{ user.id }}</p>
+          <p class="list-group-item-text">{{ user.description }}</p>
+          <button class="btn btn-success" (click)="gotoprofile()">go to profile</button>
           <hr />
         </div>
         <span class="pull-right">
           <img
-            [src]="suggestedfriend.image"
-            alt="{{ suggestedfriend.name }}"
+            [src]="user.image"
+            alt="{{ user.name }}"
             class="img-responsive"
             style="max-height: 300px"
           />
