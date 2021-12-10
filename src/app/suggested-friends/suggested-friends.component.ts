@@ -13,7 +13,7 @@ suggestedfriends: User[] = [];
   constructor(private userService: UserService) { }
 
   ngOnInit(){
-    this.suggestedfriends = this.userService.user
+    this.suggestedfriends = this.userService.users
   }
 
 
