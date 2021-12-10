@@ -15,6 +15,8 @@ export class LoginComponent{
   isLoading = false;
   error: string = null;
 
+
+
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit(form: NgForm) {
@@ -33,7 +35,7 @@ export class LoginComponent{
       resData => {
         console.log(resData);
         this.isLoading = false;
-        this.router.navigate(['/']);
+        this.router.navigate(['/signup']);
       },
       errorMessage => {
         console.log(errorMessage);
