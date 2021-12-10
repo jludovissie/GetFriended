@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { AnotherUserComponent } from './another-user/another-user.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AnotherUserComponent } from './another-user/another-user.component';
     NavBarComponent,
     SuggestedFriendsComponent,
     MyProfileComponent,
-    AnotherUserComponent
+    AnotherUserComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
