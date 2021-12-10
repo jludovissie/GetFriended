@@ -18,7 +18,7 @@
           <h4 class="list-group-item-heading">{{ user.name }}</h4>
           <p class="list-group-item-text">{{ user.id }}</p>
           <p class="list-group-item-text">{{ user.description }}</p>
-          <button class="btn btn-success" (click)="gotoprofile()">go to profile</button>
+          <button class="btn btn-success" (click)="gotoprofile(user.id)">go to profile</button>
           <hr />
         </div>
         <span class="pull-right">
