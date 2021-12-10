@@ -29,4 +29,8 @@ addPosts(newPost){
   this.postSub.next(this.post)
 
 }
+
+getPostsByUser(username) {
+  return this.post.filter(p => p.username === username)
+}
 }
