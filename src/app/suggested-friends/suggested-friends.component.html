@@ -52,18 +52,19 @@
       <a
         href="#"
         class="list-group-item clearfix"
-        *ngFor="let suggestedfriend of suggestedfriends"
+        *ngFor="let user of users"
       >
         <div class="pull-left">
-          <h4 class="list-group-item-heading">{{ suggestedfriend.name }}</h4>
-          <p class="list-group-item-text">{{ suggestedfriend.description }}</p>
-          <button class="btn btn-success">Add friend</button>
+          <h4 class="list-group-item-heading">{{ user.name }}</h4>
+          <p class="list-group-item-text">{{ user.id }}</p>
+          <p class="list-group-item-text">{{ user.description }}</p>
+          <button class="btn btn-success" (click)="gotoprofile(user.id)">go to profile</button>
           <hr />
         </div>
         <span class="pull-right">
           <img
-            [src]="suggestedfriend.image"
-            alt="{{ suggestedfriend.name }}"
+            [src]="user.image"
+            alt="{{ user.name }}"
             class="img-responsive"
             style="max-height: 300px"
           />
@@ -73,64 +74,5 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="mdc-card">
-      <h1>Ashley334</h1>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pro_Surfers_Owen_Wright%2C_Gabriel_Medina_and_Miguel_Pupo_in_San_Francisco%2C_California_on_Nov._7th_2011._Photo_by_Ithaka_Darin_Pappas.jpg/640px-Pro_Surfers_Owen_Wright%2C_Gabriel_Medina_and_Miguel_Pupo_in_San_Francisco%2C_California_on_Nov._7th_2011._Photo_by_Ithaka_Darin_Pappas.jpg"
-      />
-      <p>Me and the homies</p>
-      <div class="mdc-card__ripple">
-        <button type="button" class="btn btn-primary">Add Friend</button>
-      </div>
-    </div>
-  </div>
 
-  <div class="mdc-card">
-    <div class="col-sm-6">
-      <h1>Marting1111</h1>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Surfer_and_Northern_elephant_seal_at_Drakes_Beach.jpg/640px-Surfer_and_Northern_elephant_seal_at_Drakes_Beach.jpg"
-      />
-      <p>Hello bro</p>
-      <div class="mdc-card__ripple">
-        <button type="button" class="btn btn-primary">Add Friend</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-xs-12">
-    <div class="center">
-      <h3>Suggested Friends</h3>
-    </div>
-  </div>
-</div>
-<hr />
-
-<div class="row">
-  <div class="col-xs-12">
-    <a
-      href="#"
-      class="list-group-item clearfix"
-      *ngFor="let suggestedfriend of suggestedfriends"
-    >
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ suggestedfriend.name }}</h4>
-        <p class="list-group-item-text">{{ suggestedfriend.description }}</p>
-        <button class="btn btn-success">Add friend</button>
-        <hr />
-      </div>
-      <span class="pull-right">
-        <img
-          [src]="suggestedfriend.image"
-          alt="{{ suggestedfriend.name }}"
-          class="img-responsive"
-          style="max-height: 300px"
-        />
-      </span>
-    </a>
-  </div>
-</div>

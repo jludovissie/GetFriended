@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-suggested-friends',
@@ -8,13 +9,15 @@ import { User } from '../user.model';
   styleUrls: ['./suggested-friends.component.css']
 })
 export class SuggestedFriendsComponent implements OnInit {
-suggestedfriends: User[] = [];
+users: User[] = [];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(){
-    this.suggestedfriends = this.userService.user
+    this.users = this.userService.users
   }
 
-
+  gotoprofile(id) {
+    this.router.navigate(['/user']);
+  }
 }

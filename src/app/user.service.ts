@@ -5,7 +5,7 @@ import { User } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
-  user: User[] = [
+  users: User[] = [
     new User(
       '',
       '',

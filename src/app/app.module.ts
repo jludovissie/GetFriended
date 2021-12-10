@@ -10,7 +10,11 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
+
 import { MainComponent } from './main/main.component';
+
+import { UserComponent } from './user/user.component';
+
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { MainComponent } from './main/main.component';
     SuggestedFriendsComponent,
     LoginComponent,
     SignupComponent,
+
     MainComponent
+
+
+    UserComponent,
 
   ],
   imports: [
