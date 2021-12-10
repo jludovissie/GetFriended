@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -19,8 +20,8 @@ import { UserService } from './user.service';
     NavBarComponent,
     SuggestedFriendsComponent,
     LoginComponent,
-    SignupComponent
-
+    SignupComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
