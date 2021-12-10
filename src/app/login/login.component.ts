@@ -1,15 +1,16 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthResponseData, AuthService } from '../auth/auth.service';
+import { AuthService, AuthResponseData } from '../auth/auth.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class SignupComponent{
+export class LoginComponent{
+
   isLoginMode = true;
   isLoading = false;
   error: string = null;
@@ -26,13 +27,13 @@ export class SignupComponent{
     let authObs: Observable<AuthResponseData>;
 
     this.isLoading = true;
-    authObs = this.authService.signup(email, password);
+    authObs = this.authService.login(email, password);
 
     authObs.subscribe(
       resData => {
         console.log(resData);
         this.isLoading = false;
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
       errorMessage => {
         console.log(errorMessage);
