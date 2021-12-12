@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./suggested-friends.component.css']
 })
 export class SuggestedFriendsComponent implements OnInit {
-users: User[] = [];
+  users: User[];
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -20,4 +20,6 @@ users: User[] = [];
   gotoprofile(id) {
     this.router.navigate(['/user']);
   }
+
+  onAddFriend() {}
 }
