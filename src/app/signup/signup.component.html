@@ -1,48 +1,54 @@
-<div class = "formContainer">
-  <h3> Sign Up</h3>
-  <p>Please fill in this form to create an account!</p>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="!isLoading">
-    <div class="form-group">
-      <input
-        type="email"
-        id="email"
-        class="form-control"
-        ngModel
-        name="email"
-        required
-        email
-        placeholder="Email"
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        ngModel
-        name="password"
-        required
-        minlength="6"
-        placeholder="Password"
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="password"
-        id="confirmPassword"
-        class="form-control"
-        ngModel
-        name="confirmPassword"
-        required
-        minlength="6"
-        placeholder="Confirm Password"
-      />
-    </div>
-    <button class = "btn btn-primary" type="submit" [disabled]="!form.valid"> Sign Up</button>
-    <p>Already have an account? <a routerLink="/login"><strong> Login here</strong></a></p>
-
-    <div>
-    </div>
-  </form>
+<div class="background" >
+  <p id = "welcome"> Welcome Back </p>
+  <p id = "welcomeMessage"> Log in to Get Friended</p>
+  <button class = "signIn" (click)="onLoginClick()"> {{!login ? 'LOG IN': 'SIGN UP' }}</button>
 </div>
+  <div class="formContainer">
+    <h3>{{!login ? 'Create Your Account' : 'Log In'}}</h3>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="!isLoading" >
+      <div class="form-group">
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          email
+          placeholder="Email"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          minlength="6"
+          placeholder="Password"
+        />
+      </div>
+      <div class="form-group" *ngIf="!login">
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          minlength="6"
+          placeholder="Confirm Password"
+        />
+      </div>
+        <button type="submit" [disabled]="!form.valid" *ngIf="!login" (click)="onSignup(form)">
+          Sign Up
+        </button>
+        <button type="submit" [disabled]="!form.valid" *ngIf="login" (click)="onLogin(form)">
+          Log In
+        </button>
+    </form>
+    </div>
+
 

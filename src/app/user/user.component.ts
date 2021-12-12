@@ -8,6 +8,8 @@ import { UserService } from '../user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
+
+
 export class UserComponent implements OnInit {
   user: User;
 

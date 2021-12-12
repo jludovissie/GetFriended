@@ -1,5 +1,44 @@
 <div class="main">
   <div class="row">
+    <div class="col-sm-6">
+      <div class="mdc-card">
+        <h1>Johnny Tsunami</h1>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Onrus_Surfer.jpg/640px-Onrus_Surfer.jpg"
+        />
+        <p>I like Surfing</p>
+        <div class="mdc-card__ripple">
+          <button type="button" class="btn btn-primary">Add Friend</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="mdc-card">
+        <h1>JohnDoe443</h1>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Egyptian_Surfer.jpg/640px-Egyptian_Surfer.jpg"
+        />
+
+        <div class="mdc-card__ripple">
+          <button type="button" class="btn btn-primary">Add Friend</button>
+        </div>
+      </div>
+
+      <div class="mdc-card">
+        <div class="col-sm-6">
+          <h1>Marting1111</h1>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Surfer_and_Northern_elephant_seal_at_Drakes_Beach.jpg/640px-Surfer_and_Northern_elephant_seal_at_Drakes_Beach.jpg"
+          />
+          <p>Hello bro</p>
+          <div class="mdc-card__ripple">
+            <button type="button" class="btn btn-primary" (click)="onAddFriend()">Add Friend</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="col-xs-12">
       <div class="row">
         <div class="col-xs-12">
@@ -9,7 +48,7 @@
         </div>
       </div>
 
-      <hr>
+      <hr />
       <a
         class="list-group-item clearfix"
         *ngFor="let user of users"
@@ -33,7 +72,6 @@
     </div>
   </div>
 </div>
-
 
 
 
