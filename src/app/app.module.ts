@@ -26,8 +26,7 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     SignupComponent,
 
-    MainComponent
-
+    MainComponent,
 
     UserComponent,
 

@@ -3,6 +3,7 @@ import { ActivatedRoute, Route } from '@angular/router';
 import { PostService } from '../shared/post.service';
 import { UserService } from '../user.service';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -25,6 +26,7 @@ export class UserComponent implements OnInit {
       this.user = this.userService.getUser(this.user_Id)
       this.posts = this.postService.getPostsByUser(this.user_Id);
   })
+
 }
 }
 

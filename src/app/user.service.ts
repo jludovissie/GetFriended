@@ -42,9 +42,10 @@ export class UserService {
 
   constructor() {}
 
+
   getUser(username) {
     const userIndex = this.users.findIndex(u =>
       u.name === username)
       return this.users[userIndex]
-  };
+  }
 }

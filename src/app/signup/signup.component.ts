@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthResponseData, AuthService } from '../auth/auth.service';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-signup',
@@ -10,12 +11,13 @@ import { AuthResponseData, AuthService } from '../auth/auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent{
-
+  isLoggedIn = false;
   isLoading = false;
   error: string = null;
+  login = false;
 
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private navbar: NavBarComponent) { }
 
   onSignup(form: NgForm) {
     if (!form.valid) {
@@ -56,6 +58,12 @@ export class SignupComponent{
     let authObs: Observable<AuthResponseData>;
 
     this.isLoading = true;
+    this.isLoggedIn = true;
+    this.authService.isLoggedIn = this.isLoggedIn;
+    console.log(this.isLoggedIn);
+    console.log(this.authService.isLoggedIn);
+    this.navbar.loggedIn = true;
+    console.log(this.navbar.loggedIn);
     authObs = this.authService.login(email, password);
 
     authObs.subscribe(
@@ -63,6 +71,7 @@ export class SignupComponent{
         console.log(resData);
         this.isLoading = false;
         this.router.navigate(['/home']);
+        this.isLoggedIn = true;
       },
       errorMessage => {
         console.log(errorMessage);
@@ -72,6 +81,10 @@ export class SignupComponent{
     );
 
     form.reset();
+
   }
 
+  onLoginClick() {
+    this.login = !this.login;
+  }
 }

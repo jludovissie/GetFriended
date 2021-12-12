@@ -1,8 +1,11 @@
-<div class="background">
+<div class="background" >
+  <p id = "welcome"> Welcome Back </p>
+  <p id = "welcomeMessage"> Log in to Get Friended</p>
+  <button class = "signIn" (click)="onLoginClick()"> {{!login ? 'LOG IN': 'SIGN UP' }}</button>
+</div>
   <div class="formContainer">
-    <h3>Get Started with Get Friended</h3>
-    <p>Sign up or Login</p>
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="!isLoading">
+    <h3>{{!login ? 'Create Your Account' : 'Log In'}}</h3>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="!isLoading" >
       <div class="form-group">
         <input
           type="email"
@@ -27,14 +30,25 @@
           placeholder="Password"
         />
       </div>
-      <div class="buttons">
-        <button type="submit" [disabled]="!form.valid" (click)="onLogin(form)">
-          Login
-        </button>
-        <button type="submit" [disabled]="!form.valid" (click)="onSignup(form)">
+      <div class="form-group" *ngIf="!login">
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          minlength="6"
+          placeholder="Confirm Password"
+        />
+      </div>
+        <button type="submit" [disabled]="!form.valid" *ngIf="!login" (click)="onSignup(form)">
           Sign Up
         </button>
-      </div>
+        <button type="submit" [disabled]="!form.valid" *ngIf="login" (click)="onLogin(form)">
+          Log In
+        </button>
     </form>
-  </div>
-</div>
+    </div>
+
+
