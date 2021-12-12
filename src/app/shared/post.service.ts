@@ -12,7 +12,7 @@ import { Observable, BehaviorSubject  } from "rxjs";
 export class PostService{
 
   private post:  Post[] = [
-    {username: 'jludovissie', post:'I am cool', likes: 0, dislikes: 0 },
+    {username: 'jollyjordan', post:'I am cool', likes: 0, dislikes: 0 },
     {username: 'happyhannah', post:'I am happy', likes: 0 , dislikes: 0 },
     {username:'niftynancy', post:'I am nifty', likes: 0, dislikes: 0  },
     {username:'bestiebri' , post: 'I am your bestie', likes: 0 , dislikes: 0 }

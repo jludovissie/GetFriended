@@ -1,6 +1,7 @@
+<div class="container">
 <div class="main">
   <div class="row">
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
       <div class="mdc-card">
         <h1>Johnny Tsunami</h1>
         <img
@@ -37,7 +38,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-xs-12">
       <div class="row">
@@ -55,7 +56,7 @@
         *ngFor="let user of users"
       >
         <div class="pull-left">
-          <h4 class="list-group-item-heading">{{ user.name }}</h4>
+          <h4 class="list-group-item-heading">{{ user.username }}</h4>
           <p class="list-group-item-text">{{ user.id }}</p>
           <p class="list-group-item-text">{{ user.description }}</p>
           <button class="btn btn-success" (click)="gotoprofile(user.id)">go to profile</button>
@@ -72,6 +73,7 @@
       </a>
     </div>
   </div>
+</div>
 </div>
 
 
