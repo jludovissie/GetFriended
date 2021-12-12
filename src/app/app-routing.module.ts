@@ -10,6 +10,13 @@ import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
+
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'suggestedFriends', component: SuggestedFriendsComponent, canActivate: [AuthGuard]},
+  { path: 'signup', component: SignupComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'main', component: MainComponent},
+  { path: 'user', component: UserComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   {
@@ -23,6 +30,7 @@ const routes: Routes = [
   { path: 'user/:id', component: UserComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'suggestedFriends', component: SuggestedFriendsComponent },
+
 
 ];
 
