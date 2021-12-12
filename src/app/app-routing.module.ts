@@ -15,12 +15,12 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: 'user', component: UserComponent },
-    ],
+    // canActivate: [AuthGuard],
+    // children: [
+    //   { path: 'user', component: UserComponent },
+    // ],
   },
-
+  { path: 'user/:id', component: UserComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'suggestedFriends', component: SuggestedFriendsComponent },
 

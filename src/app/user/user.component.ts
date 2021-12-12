@@ -11,15 +11,17 @@ import { UserService } from '../user.service';
 
 
 export class UserComponent implements OnInit {
-  user: User;
+  users: User[] = [];
 
-  constructor(private userService: UserService, private router: ActivatedRoute) { }
+  constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(){
-    this.router.params.subscribe((params)=>{
-
+    this.users = this.userService.users
+    this.route.params.subscribe((params)=>{
+      this.users.indexOf = params['id'];
     });
   }
+
 
 }
 

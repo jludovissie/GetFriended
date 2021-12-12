@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-suggested-friends',
@@ -11,17 +11,15 @@ import { Router } from '@angular/router';
 export class SuggestedFriendsComponent implements OnInit {
   users: User[];
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(){
     this.users = this.userService.users
   }
 
   gotoprofile(id) {
-    console.log(id)
     this.router.navigate(['/user/' + id]);
-
   }
-
-  onAddFriend() {}
 }
