@@ -9,21 +9,34 @@ import { SignupComponent } from './signup/signup.component';
 import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends.component';
 import { UserComponent } from './user/user.component';
 
-
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'suggestedFriends', component: SuggestedFriendsComponent, canActivate: [AuthGuard]},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
-  {path: 'main', component: MainComponent},
+  { path: 'main', component: MainComponent},
   { path: 'user', component: UserComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: MainComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'user', component: UserComponent },
+    ],
+  },
+
+  { path: 'signup', component: SignupComponent },
+  { path: 'suggestedFriends', component: SuggestedFriendsComponent },
 
 
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

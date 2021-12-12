@@ -3,6 +3,7 @@ import { Post } from '../post.model';
 import { PostService } from '../shared/post.service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,8 +12,10 @@ import { tap } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   isShown = false;
   posts : Observable<Post[]>
+  user_Id
 
-  constructor(private post: PostService) {
+  constructor(private post: PostService,
+              private route: ActivatedRoute) {
     this.posts = post.post$.pipe(tap(data => {
       console.log('working')
     } ))
@@ -29,6 +32,13 @@ export class HomeComponent implements OnInit {
  }
  onLiked(i: Number){
   this.post.likePost(i);
+
+ }
+  
+ goToUser() {
+   this.route.params.subscribe(params => {
+     this.user_Id = params["id"]
+   })
 
  }
  onDisliked(i : number){

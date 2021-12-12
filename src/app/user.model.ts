@@ -6,15 +6,19 @@ export class User {
     public name?: string;
     public description?: string;
     public image?: string;
+    public friends: User[];
 
-    constructor(email: string, password: string, id: string, name: string, description: string, image: string)
+
+    constructor(email: string, password: string, id: string, name: string, description: string, image: string, friends?: User[])
      {
       this.email = email;
       this.password = password;
       this.id = id;
       this.name = name;
       this.description = description;
-      this.image = image
+      this.image = image;
+      this.friends = friends || [];
+
      }
 
 }
