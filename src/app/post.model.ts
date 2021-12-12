@@ -1,5 +1,6 @@
 export class Post {
     constructor(
+        // should be userId
         public username: string,
         public post: string,
         public likes: number,
@@ -7,3 +8,8 @@ export class Post {
      {}
 
 }
+
+
+// posts belongs to a user
+// post has the user id
+// users have many posts

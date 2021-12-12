@@ -16,21 +16,20 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
   { path: 'main', component: MainComponent},
-  { path: 'user', component: UserComponent },
+  { path: 'user/:id', component: UserComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: 'user', component: UserComponent },
-    ],
-  },
-
-  { path: 'signup', component: SignupComponent },
+  // {
+  //   path: 'home',
+  //   component: HomeComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     { path: 'user/:id', component: UserComponent },
+  //   ],
+  // },
+  /* { path: 'signup', component: SignupComponent },
   { path: 'suggestedFriends', component: SuggestedFriendsComponent },
-
+ */
 
 ];
 
