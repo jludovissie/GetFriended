@@ -14,8 +14,7 @@
       <div class="center" *ngFor="let user of users">
         <h4 class="main">{{ user.name }}</h4>
         <p class="main">{{ user.description }}</p>
-        <button class="btn btn-success" routerLink="/home/user">user</button>
-        <button class="btn btn-success" (click)="gotoprofile(user.id)">go to profile</button>
+        <button class="btn btn-success" [routerLink]="'/user/' + user.username">go to profile</button>
         <span class="main">
           <img
             [src]="user.image"
