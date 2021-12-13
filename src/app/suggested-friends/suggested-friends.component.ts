@@ -17,9 +17,4 @@ export class SuggestedFriendsComponent implements OnInit {
     this.users = this.userService.users
   }
 
-  gotoprofile(id) {
-    this.router.navigate(['/user']);
   }
-
-  onAddFriend() {}
-}
