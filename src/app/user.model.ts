@@ -6,10 +6,13 @@ export class User {
     public name?: string;
     public description?: string;
     public image?: string;
+    public likes?: number;
+    public dislikes?: number;
     public friends: User[];
 
 
-    constructor(email: string, password: string, id: string, name: string, description: string, image: string, friends?: User[])
+
+    constructor(email: string, password: string, id: string, name: string, description: string, image: string, likes: number, dislikes: number, friends?: User[])
      {
       this.email = email;
       this.password = password;
@@ -18,6 +21,8 @@ export class User {
       this.description = description;
       this.image = image;
       this.friends = friends || [];
+      this.likes = likes;
+      this.dislikes = dislikes;
 
      }
 
