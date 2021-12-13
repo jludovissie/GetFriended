@@ -1,0 +1,21 @@
+.title {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+.friend-image {
+  height: 100px;
+}
+
+.friend-container {
+  border: 2px solid green;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+#friend-name {
+  font-size: 15px;
+  font-weight: bold;
+}

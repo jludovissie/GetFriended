@@ -6,6 +6,7 @@ import { User } from './shared/user/user.model';
   providedIn: 'root',
 })
 export class UserService {
+  friends: User[] = [];
   users: User[] = [
     new User(
       'hannah@email.com',
@@ -46,5 +47,9 @@ export class UserService {
   getUser(username) {
     const userIndex = this.users.findIndex((u) => u.username === username);
     return this.users[userIndex];
+  }
+
+  addFriend(user: User){
+    this.friends.push(user);
   }
 }
