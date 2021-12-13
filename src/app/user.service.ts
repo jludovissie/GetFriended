@@ -23,13 +23,13 @@ export class UserService {
       'I like computer!!',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Egyptian_Surfer.jpg/640px-Egyptian_Surfer.jpg'
     ),
-    new User (
+    new User(
       'nancy@email.com',
       '2',
       'niftynancy',
       [],
       'I enjoy all things Jams',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pro_Surfers_Owen_Wright%2C_Gabriel_Medina_and_Miguel_Pupo_in_San_Francisco%2C_California_on_Nov._7th_2011._Photo_by_Ithaka_Darin_Pappas.jpg/640px-Pro_Surfers_Owen_Wright%2C_Gabriel_Medina_and_Miguel_Pupo_in_San_Francisco%2C_California_on_Nov._7th_2011._Photo_by_Ithaka_Darin_Pappas.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pro_Surfers_Owen_Wright%2C_Gabriel_Medina_and_Miguel_Pupo_in_San_Francisco%2C_California_on_Nov._7th_2011._Photo_by_Ithaka_Darin_Pappas.jpg/640px-Pro_Surfers_Owen_Wright%2C_Gabriel_Medina_and_Miguel_Pupo_in_San_Francisco%2C_California_on_Nov._7th_2011._Photo_by_Ithaka_Darin_Pappas.jpg'
     ),
     new User(
       'bri@email.com',
@@ -43,10 +43,8 @@ export class UserService {
 
   constructor() {}
 
-
   getUser(username) {
-    const userIndex = this.users.findIndex(u =>
-      u.username === username)
-      return this.users[userIndex]
+    const userIndex = this.users.findIndex((u) => u.username === username);
+    return this.users[userIndex];
   }
 }
