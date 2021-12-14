@@ -14,6 +14,7 @@ import { UserService } from './user.service';
 import { MainComponent } from './main/main.component';
 
 import { UserComponent } from './user/user.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 
 
@@ -29,6 +30,7 @@ import { UserComponent } from './user/user.component';
     MainComponent,
 
     UserComponent,
+     LoadingSpinnerComponent,
 
   ],
   imports: [
