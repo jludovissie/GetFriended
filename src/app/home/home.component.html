@@ -1,3 +1,4 @@
+
 <div class="header">
   <div class="container">
     <div class="row">
@@ -21,13 +22,13 @@
           <input
             type="text"
             class="form-control"
-            placeholder="{{ user.username }}"
+            placeholder="username"
             aria-label="name"
             aria-describedby="basic-addon1"
-            name="name"
+            name="username"
             ngModel
             required
-            #user="ngModel"
+            #username="ngModel"
           />
         </div>
         <div class="input-group">
@@ -37,9 +38,9 @@
           <textarea
             class="form-control"
             aria-label="With textarea"
-            name="description"
+            name="post"
             ngModel
-            #description="ngModel"
+            #post="ngModel"
           ></textarea>
           <button type="submit" class="btn btn-btn primary">Post</button>
         </div>
@@ -50,7 +51,6 @@
   <div class="row">
     <div
       class="col-sm-6"
-
       *ngFor="let post of posts | async let i = index"
     >
       <div class="card">
@@ -66,6 +66,7 @@
           </button>
         </div>
       </div>
+
     </div>
   </div>
 </div>

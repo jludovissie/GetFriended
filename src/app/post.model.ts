@@ -3,6 +3,7 @@ export class Post {
         // should be userId
         public username: string,
         public post: string,
+        public image: string,
         public likes: number,
         public dislikes: number)
      {}
