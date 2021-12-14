@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { SignupComponent } from '../signup/signup.component';
@@ -13,15 +13,22 @@ import { SignupComponent } from '../signup/signup.component';
 export class NavBarComponent implements OnInit {
   loggedIn = false;
   private userSub: Subscription
+  user
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.userSub = this.authService.user.subscribe(user => {
       this.loggedIn = !user;
-      console.log(!user);
-      console.log(!!user);
+      this.user = user;
+      console.log(this.user)
     });
+  }
+
+  goToMyProfile() {
+    this.route.params.subscribe(params => {
+      // this.myProfile = params["id"]
+    })
   }
 
   onLogout() {
@@ -32,5 +39,9 @@ export class NavBarComponent implements OnInit {
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
+
+getRoute(){
+return "user/happyhannah"
+}
 
 }

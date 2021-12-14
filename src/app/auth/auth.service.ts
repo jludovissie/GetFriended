@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 
-import { User } from './user.model';
+import { User } from '../shared/user/user.model';
 import { environment } from 'src/environments/environment';
+import { UserService } from '../user.service';
 
 export interface AuthResponseData {
   kind: string;
@@ -23,7 +24,7 @@ export class AuthService {
   private tokenExpirationTimer: any;
   isLoggedIn: Boolean;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) {}
 
   signup(email: string, password: string) {
     return this.http
@@ -86,11 +87,20 @@ export class AuthService {
     const loadedUser = new User(
       userData.email,
       userData.id,
+      "awesomeAndrew",
+      [],
+      "description",
+      "https://listovative.com/wp-content/uploads/2014/08/Cute-dogs-hd-download-4.jpg",
       userData._token,
-      new Date(userData._tokenExpirationDate)
+      new Date(userData._tokenExpirationDate),
     );
 
+// inject user service
+// push this user instance in the users array that exists in the user service
+
     if (loadedUser.token) {
+      // this.userService.
+      this.userService.users.push(loadedUser);
       this.user.next(loadedUser);
       const expirationDuration =
         new Date(userData._tokenExpirationDate).getTime() -
@@ -122,7 +132,18 @@ export class AuthService {
     expiresIn: number
   ) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 10000);
-    const user = new User(email, userId, token, expirationDate);
+    // constructor(
+    //   public email: string,
+    //   public id: string,
+    //   public username: string,
+    //   public friends: User[],
+    //   public description?: string,
+    //   public image?: string,
+        //   private _token: string,
+    //   private _tokenExpirationDate: Date,
+    // ) {}
+    const user = new User(email, userId, "awesomeAndrew", [], "description", "https://listovative.com/wp-content/uploads/2014/08/Cute-dogs-hd-download-4.jpg", token, expirationDate,);
+    this.userService.users.push(user);
     this.user.next(user);
     this.autoLogout(expiresIn * 10000);
     localStorage.setItem('userData', JSON.stringify(user));

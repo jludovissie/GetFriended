@@ -4,10 +4,12 @@
     <img src={{user.image}} class="img-fluid">
   </div>
     <div class="col-sm my-auto">
-    <h1>{{user.name}}</h1>
+    <h1>{{user.username}}</h1>
     <p>{{user.description}}</p>
+    <button *ngIf="user.username != 'awesomeAndrew'"(click)="onAddFriend(user)"> Add Friend</button>
     </div>
   </div>
+
 </div>
 
 <br>
@@ -21,8 +23,18 @@
    {{post.post}}
    </div>
  </div>
-
-
   </div>
 </div>
 
+<div class = "friend-section"  *ngIf="user.username == 'awesomeAndrew'">
+  <h1 class = "title"> My Friends</h1>
+    <div class="row">
+      <div class="col-lg-2" *ngFor="let friend of friends, let i = index">
+        <div class = "friend-container">
+        <p id = "friend-name">{{friend.username}}</p>
+        <img class = "friend-image" src="{{friend.image}}" alt="">
+        <button (click)="onRemoveFriend(friend,i)"> Remove Friend</button>
+      </div>
+    </div>
+  </div>
+</div>

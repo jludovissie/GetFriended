@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { User } from '../user.model';
 import { Router } from '@angular/router';
+import { User } from '../shared/user/user.model';
 
 @Component({
   selector: 'app-suggested-friends',
@@ -17,9 +17,4 @@ export class SuggestedFriendsComponent implements OnInit {
     this.users = this.userService.users
   }
 
-  gotoprofile(id) {
-    this.router.navigate(['/user']);
   }
-
-  onAddFriend() {}
-}
