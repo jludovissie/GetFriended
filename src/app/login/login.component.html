@@ -1,5 +1,8 @@
 <div class = "formContainer">
   <h3> Login</h3>
+  <div *ngIf="isLoading" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
   <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="!isLoading">
     <div class="form-group">
       <input
@@ -29,7 +32,5 @@
     <button class = "btn btn-primary" type="submit" [disabled]="!form.valid"> Login</button>
 
 
-    <div>
-    </div>
   </form>
 </div>

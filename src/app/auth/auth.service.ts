@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 
-import { User } from '../shared/user/user.model';
+import { AuthUser } from './authuser.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../user.service';
 
@@ -20,7 +20,7 @@ export interface AuthResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  user = new BehaviorSubject<User>(null);
+  user = new BehaviorSubject<AuthUser>(null);
   private tokenExpirationTimer: any;
   isLoggedIn: Boolean;
 
@@ -84,7 +84,7 @@ export class AuthService {
       return;
     }
 
-    const loadedUser = new User(
+    const loadedUser = new AuthUser(
       userData.email,
       userData.id,
       "awesomeAndrew",
@@ -142,7 +142,7 @@ export class AuthService {
         //   private _token: string,
     //   private _tokenExpirationDate: Date,
     // ) {}
-    const user = new User(email, userId, "awesomeAndrew", [], "description", "https://listovative.com/wp-content/uploads/2014/08/Cute-dogs-hd-download-4.jpg", token, expirationDate,);
+    const user = new AuthUser(email, userId, "awesomeAndrew", [], "description", "https://listovative.com/wp-content/uploads/2014/08/Cute-dogs-hd-download-4.jpg", token, expirationDate,);
     this.userService.users.push(user);
     this.user.next(user);
     this.autoLogout(expiresIn * 10000);
