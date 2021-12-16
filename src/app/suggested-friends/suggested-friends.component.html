@@ -1,30 +1,28 @@
-<div class="main">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="center">
-        <h3>Suggested Friends</h3>
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Suggested Friends</h1>
       </div>
     </div>
   </div>
 </div>
-<hr>
-<div class="main">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="center" *ngFor="let user of users">
-        <h4 class="main">{{ user.name }}</h4>
-        <p class="main">{{ user.description }}</p>
-        <button class="btn btn-success" [routerLink]="'/user/' + user.username">go to profile</button>
-        <span class="main">
-          <img
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let user of users">
+    <div class="card">
+      <div class="card-body">
+        <img
             [src]="user.image"
             alt="{{ user.name }}"
-            class="img-responsive"
-            style="max-height: 300px"
+            class="img-fluid"
           />
-        </span>
+        <h2>{{user.username}}</h2>
+        <p>{{ user.description }}</p>
+        <button type="button" class="btn btn-primary" [routerLink]="'/user/' + user.username">go to profile</button>
       </div>
     </div>
   </div>
 </div>
+
 
