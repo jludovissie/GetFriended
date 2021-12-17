@@ -36,11 +36,14 @@
           id="password"
           class="form-control"
           ngModel
-          name="password"
+          name="password01"
           required
           minlength="6"
           placeholder="Confirm Password"
         />
+
+
+
       </div>
         <button type="submit" [disabled]="!form.valid" *ngIf="!login" (click)="onSignup(form)">
           Sign Up
