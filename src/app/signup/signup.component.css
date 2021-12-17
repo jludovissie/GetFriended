@@ -93,3 +93,9 @@ h3 {
   font-size: 20px;
   font-weight: bold;
 }
+
+button:disabled {
+  color: gray;
+  box-shadow: 0 8px 5px -2px rgb(136, 11, 11);
+  border: 2px solid rgb(243, 47, 47);
+}
