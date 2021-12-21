@@ -14,6 +14,7 @@ export class NavBarComponent implements OnInit {
   loggedIn = false;
   private userSub: Subscription
   user
+  collapsed=true;
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
 
