@@ -1,30 +1,49 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <!-- localhost/user/0 -->
-      <a class="navbar-brand" [routerLink]="'/user/' + user.username">
-        <img src="url(../../../../assets/Get Friended.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/home" *ngIf="!loggedIn">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/suggestedFriends" *ngIf="!loggedIn">Suggested Friends</a>
-          </li>
-          <!-- <li>
+  <div class="container-fluid">
+    <!-- localhost/user/0 -->
+    <a class="navbar-brand" [routerLink]="'/user/' + user.username">
+      <img src="url(../../../../assets/Get Friended.png" alt=""
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="collapsed = !collapsed"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText" [ngClass]="{collapse: collapsed}">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/home"
+            *ngIf="!loggedIn"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/suggestedFriends" *ngIf="!loggedIn"
+            >Suggested Friends</a
+          >
+        </li>
+        <!-- <li>
             <a class ="nav-link" routerLink="main">Main Page</a>
           </li> -->
-        </ul>
-        <ul>
-          <div class="nav navbar-nav navbar-right">
-            <div class="navbar-right">
-            </div>
-          </div>
-        </ul>
-        <span class="float-right" (click)="onLogout()" *ngIf="!loggedIn">Logout</span>
-      </div>
+      </ul>
+      <ul>
+        <div class="nav navbar-nav navbar-right">
+          <div class="navbar-right"></div>
+        </div>
+      </ul>
+      <span class="float-right" (click)="onLogout()" *ngIf="!loggedIn"
+        >Logout</span
+      >
     </div>
-  </nav>
+  </div>
+</nav>
